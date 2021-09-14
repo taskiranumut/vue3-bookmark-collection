@@ -1,9 +1,28 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
+import Home from "@/views/Home";
+import AddBookmark from "@/views/AddBookmark";
+import EditBookmark from "@/views/EditBookmark";
 
-const routes = [];
+const routes = [
+  {
+    name: "Home",
+    path: "/",
+    component: Home,
+  },
+  {
+    name: "AddBookmark",
+    path: "/add-bookmark",
+    component: AddBookmark,
+  },
+  {
+    name: "EditBookmark",
+    path: "/edit-bookmark/:id",
+    component: EditBookmark,
+  },
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
 });
 
