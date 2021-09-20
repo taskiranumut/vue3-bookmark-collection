@@ -1,5 +1,9 @@
 # Bookmark Collection - Vue 3
 
+[Project Preview](https://zealous-curran-79788d.netlify.app/#/)
+
+---
+
 ## Project setup
 
 ```
