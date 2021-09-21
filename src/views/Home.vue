@@ -28,8 +28,4 @@ export default {
 .border {
   border-radius: 5px;
 }
-
-img {
-  border: 5px dashed #fff;
-}
 </style>
