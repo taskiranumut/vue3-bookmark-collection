@@ -15,6 +15,12 @@ export default {
     editBookmark(e) {
       e.stopPropagation();
       console.log("editBookmark works");
+      this.$router.push({
+        name: "EditBookmark",
+        params: {
+          id: "demoId123",
+        },
+      });
     },
     deleteBookmark(e) {
       e.stopPropagation();
