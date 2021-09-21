@@ -1,6 +1,6 @@
 <template>
   <div
-    class="d-flex justify-content-between border radius bg-hover px-4 mt-4"
+    class="d-flex justify-content-between border bg-hover px-4 mt-4"
     :class="{ bgColor: bookmarkDetailsIsActive }"
     @click="showDetails"
   >
@@ -36,10 +36,6 @@ export default {
 </script>
 
 <style scoped>
-.radius {
-  border-radius: 5px;
-}
-
 .bg-hover:hover {
   background-color: #0f3460;
   cursor: pointer;

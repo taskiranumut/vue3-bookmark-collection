@@ -24,8 +24,4 @@ export default {
 .col-6 {
   background-color: #16213e;
 }
-
-.border {
-  border-radius: 5px;
-}
 </style>
