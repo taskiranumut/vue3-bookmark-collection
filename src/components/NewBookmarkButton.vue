@@ -8,6 +8,9 @@
 export default {
   methods: {
     newBookmark() {
+      this.$router.push({
+        name: "AddBookmark",
+      });
       console.log("newBookmark works");
     },
   },
