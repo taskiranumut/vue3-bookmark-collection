@@ -12,9 +12,15 @@ export default {
   methods: {
     saveBookmark() {
       console.log("saveBookmark works");
+      this.$router.push({
+        name: "Home",
+      });
     },
     cancelOperation() {
       console.log("cancelOperation works");
+      this.$router.push({
+        name: "Home",
+      });
     },
   },
 };
