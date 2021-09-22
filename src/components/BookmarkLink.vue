@@ -1,13 +1,23 @@
 <template>
   <div class="d-flex align-items-center">
-    <a
-      href="https://github.com/taskiranumut"
-      target="_blank"
-      @click="$event.stopPropagation()"
-      >Umut Taşkıran GitHub profile</a
-    >
+    <a :href="bookmarkUrl" target="_blank" @click="$event.stopPropagation()">{{
+      bookmarkTitle
+    }}</a>
   </div>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      bookmarkTitle: "_bookmarkTitle",
+      bookmarkUrl: "_bookmarkUrl",
+    }),
+  },
+};
+</script>
 
 <style scoped>
 a {

@@ -3,7 +3,7 @@
   <div class="container">
     <div class="col-6 offset-3 border p-3">
       <NewBookmarkButton />
-      <BookmarkItem v-for="i in 5" :key="i" />
+      <BookmarkItem />
     </div>
   </div>
 </template>

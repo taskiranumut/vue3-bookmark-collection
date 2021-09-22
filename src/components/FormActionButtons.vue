@@ -9,8 +9,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      bookmark: {
+        title: "demo 1",
+        url: "https://google.com",
+        description: "demo description",
+      },
+    };
+  },
   methods: {
     saveBookmark() {
+      this.$appAxios.post("/", this.bookmark).then((res) => {
+        console.log(res);
+      });
       console.log("saveBookmark works");
       this.$router.push({
         name: "Home",

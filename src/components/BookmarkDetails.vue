@@ -1,13 +1,24 @@
 <template>
   <div class="details p-2">
-    <p>
-      <span>Description: </span>Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Quibusdam ex repudiandae illo nostrum, asperiores
-      facilis aperiam et sint sit ullam!
+    <p><span>Description: </span>{{ bookmarkDescription }}</p>
+    <p class="mb-0">
+      <span>URL: </span><i>{{ bookmarkUrl }}</i>
     </p>
-    <p class="mb-0"><span>URL: </span><i>https://github.com/taskiranumut</i></p>
   </div>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      bookmarkUrl: "_bookmarkUrl",
+      bookmarkDescription: "_bookmarkDescription",
+    }),
+  },
+};
+</script>
 
 <style scoped>
 p {
