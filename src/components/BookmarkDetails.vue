@@ -1,24 +1,17 @@
+<script>
+export default {
+  props: ["bookmark"],
+};
+</script>
+
 <template>
   <div class="details p-2">
-    <p><span>Description: </span>{{ bookmarkDescription }}</p>
+    <p><span>Description: </span>{{ bookmark.description }}</p>
     <p class="mb-0">
-      <span>URL: </span><i>{{ bookmarkUrl }}</i>
+      <span>URL: </span><i>{{ bookmark.url }}</i>
     </p>
   </div>
 </template>
-
-<script>
-import { mapGetters } from "vuex";
-
-export default {
-  computed: {
-    ...mapGetters({
-      bookmarkUrl: "_bookmarkUrl",
-      bookmarkDescription: "_bookmarkDescription",
-    }),
-  },
-};
-</script>
 
 <style scoped>
 p {
