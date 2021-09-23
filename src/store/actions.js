@@ -6,7 +6,7 @@ export default {
       .get("/")
       .then((res) => res.data)
       .then((bookmarkList) => {
-        commit("setBookmarkList", bookmarkList);
+        commit("fillBookmarkList", bookmarkList);
       });
   },
 };
