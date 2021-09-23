@@ -1,23 +1,16 @@
+<script>
+export default {
+  props: ["bookmark"],
+};
+</script>
+
 <template>
   <div class="d-flex align-items-center">
-    <a :href="bookmarkUrl" target="_blank" @click="$event.stopPropagation()">{{
-      bookmarkTitle
+    <a :href="bookmark.url" target="_blank" @click="$event.stopPropagation()">{{
+      bookmark.title
     }}</a>
   </div>
 </template>
-
-<script>
-import { mapGetters } from "vuex";
-
-export default {
-  computed: {
-    ...mapGetters({
-      bookmarkTitle: "_bookmarkTitle",
-      bookmarkUrl: "_bookmarkUrl",
-    }),
-  },
-};
-</script>
 
 <style scoped>
 a {
