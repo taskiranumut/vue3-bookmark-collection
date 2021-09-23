@@ -1,19 +1,12 @@
 import { createStore } from "vuex";
+import state from "./state";
+import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 
 export default createStore({
-  state: {
-    bookmark: {
-      bookmarkTitle: "GitHub profile - Umut Taşkıran",
-      bookmarkUrl: "https://github.com/taskiranumut",
-      bookmarkDescription: "This is first description",
-    },
-  },
-  getters: {
-    _bookmarkTitle: (state) => state.bookmark.bookmarkTitle,
-    _bookmarkUrl: (state) => state.bookmark.bookmarkUrl,
-    _bookmarkDescription: (state) => state.bookmark.bookmarkDescription,
-  },
-  mutations: {},
-  actions: {},
-  modules: {},
+  state,
+  getters,
+  mutations,
+  actions,
 });
