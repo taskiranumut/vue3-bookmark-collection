@@ -1,4 +1,4 @@
-import { appAxios } from "../utils/appAxios";
+import { appAxios } from "@/utils/appAxios";
 
 export default {
   fillBookmarkList({ commit }) {
@@ -7,6 +7,14 @@ export default {
       .then((res) => res.data)
       .then((bookmarkList) => {
         commit("fillBookmarkList", bookmarkList);
-      });
+      })
+      .catch((err) => console.log(err));
+  },
+  postBookmark({ commit }, bookmark) {
+    appAxios
+      .post("/", bookmark)
+      .then(() => commit("addToBookmarkList", bookmark))
+      .then(() => commit("resetBookmarkItems"))
+      .catch((err) => console.log(err));
   },
 };
