@@ -8,32 +8,38 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations } from "vuex";
 export default {
-  data() {
-    return {
-      bookmark: {
-        title: "demo 1",
-        url: "https://google.com",
-        description: "demo description",
-      },
-    };
-  },
   methods: {
+    ...mapActions({
+      postBookmark: "postBookmark",
+    }),
+    ...mapMutations({
+      addToBookmarkList: "addToBookmarkList",
+    }),
     saveBookmark() {
-      this.$appAxios.post("/", this.bookmark).then((res) => {
-        console.log(res);
-      });
-      console.log("saveBookmark works");
+      const bookmark = {
+        title: this.bookmarkTitle,
+        url: this.bookmarkUrl,
+        description: this.bookmarkDescription,
+      };
+      this.postBookmark(bookmark);
       this.$router.push({
         name: "Home",
       });
     },
     cancelOperation() {
-      console.log("cancelOperation works");
       this.$router.push({
         name: "Home",
       });
     },
+  },
+  computed: {
+    ...mapGetters({
+      bookmarkTitle: "_bookmarkTitle",
+      bookmarkUrl: "_bookmarkUrl",
+      bookmarkDescription: "_bookmarkDescription",
+    }),
   },
 };
 </script>
