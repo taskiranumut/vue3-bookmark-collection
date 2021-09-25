@@ -10,7 +10,7 @@ export default {
       })
       .catch((err) => console.log(err));
   },
-  postBookmark({ commit }, bookmark) {
+  postBookmarkToApi({ commit }, bookmark) {
     appAxios
       .post("/", bookmark)
       .then(() => commit("addToBookmarkList", bookmark))

@@ -5,13 +5,13 @@ export default {
   methods: {
     handleSaveBookmark() {
       const bookmark = { ...this.bookmarkItems };
-      this.postBookmark(bookmark);
+      this.postBookmarkToApi(bookmark);
       this.$router.push({
         name: "Home",
       });
     },
     ...mapActions({
-      postBookmark: "postBookmark",
+      postBookmarkToApi: "postBookmarkToApi",
     }),
   },
   computed: {
