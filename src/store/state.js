@@ -1,8 +1,8 @@
 export default {
   bookmarkList: [],
   bookmarkItems: {
-    bookmarkTitle: "",
-    bookmarkUrl: "",
-    bookmarkDescription: "",
+    bookmarkTitle: null,
+    bookmarkUrl: null,
+    bookmarkDescription: null,
   },
 };

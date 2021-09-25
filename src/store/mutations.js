@@ -15,8 +15,6 @@ export default {
     state.bookmarkItems.bookmarkDescription = description;
   },
   resetBookmarkItems(state) {
-    state.bookmarkItems.bookmarkTitle = "";
-    state.bookmarkItems.bookmarkUrl = "";
-    state.bookmarkItems.bookmarkDescription = "";
+    for (const key in state.bookmarkItems) state.bookmarkItems[key] = null;
   },
 };
