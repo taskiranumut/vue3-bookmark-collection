@@ -6,9 +6,12 @@ export default {
 
 <template>
   <div class="d-flex align-items-center">
-    <a :href="bookmark.url" target="_blank" @click="$event.stopPropagation()">{{
-      bookmark.title
-    }}</a>
+    <a
+      :href="bookmark.bookmarkUrl"
+      target="_blank"
+      @click="$event.stopPropagation()"
+      >{{ bookmark.bookmarkTitle }}</a
+    >
   </div>
 </template>
 
