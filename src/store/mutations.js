@@ -14,4 +14,9 @@ export default {
   resetBookmarkItems(state) {
     for (const key in state.bookmarkItems) state.bookmarkItems[key] = null;
   },
+  deleteBookmarkFromBookmarkList(state, bookmarkId) {
+    state.bookmarkList = state.bookmarkList.filter(
+      (item) => item.id !== bookmarkId
+    );
+  },
 };

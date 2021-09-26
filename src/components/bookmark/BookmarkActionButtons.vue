@@ -3,6 +3,7 @@ import BookmarkDeleteButton from "@/components/bookmark/BookmarkDeleteButton.vue
 import BookmarkEditButton from "@/components/bookmark/BookmarkEditButton.vue";
 
 export default {
+  props: ["bookmarkId"],
   components: {
     BookmarkDeleteButton,
     BookmarkEditButton,
@@ -13,7 +14,7 @@ export default {
 <template>
   <div class="d-flex justify-content-between m-1 p-1">
     <BookmarkEditButton />
-    <BookmarkDeleteButton />
+    <BookmarkDeleteButton :bookmarkId="bookmarkId" />
   </div>
 </template>
 

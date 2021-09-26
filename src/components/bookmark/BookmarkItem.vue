@@ -30,7 +30,7 @@ export default {
     @click="showDetails"
   >
     <BookmarkLink :bookmark="bookmark" />
-    <BookmarkActionButtons />
+    <BookmarkActionButtons :bookmarkId="bookmark.id" />
   </div>
   <BookmarkDetails v-if="bookmarkDetailsIsActive" :bookmark="bookmark" />
 </template>

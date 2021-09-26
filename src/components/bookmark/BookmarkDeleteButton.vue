@@ -1,9 +1,16 @@
 <script>
+import { mapActions } from "vuex";
+
 export default {
+  props: ["bookmarkId"],
   methods: {
     deleteBookmark(e) {
       e.stopPropagation();
+      this.deleteBookmarkFromApi(this.bookmarkId);
     },
+    ...mapActions({
+      deleteBookmarkFromApi: "deleteBookmarkFromApi",
+    }),
   },
 };
 </script>
