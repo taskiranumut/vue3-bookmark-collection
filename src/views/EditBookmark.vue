@@ -15,19 +15,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <div class="container">
-    <div class="col-6 form-bg-color offset-3 border p-3">
-      <FormInputTitle />
-      <FormInputUrl />
-      <FormTextareaDescription />
-      <FormActionButtons />
-    </div>
-  </div>
+  <FormInputTitle />
+  <FormInputUrl />
+  <FormTextareaDescription />
+  <FormActionButtons />
 </template>
-
-<style scoped>
-.form-bg-color {
-  background-color: #16213e;
-}
-</style>

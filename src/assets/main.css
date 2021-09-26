@@ -26,7 +26,8 @@ body,
   box-shadow: none;
 }
 
-.form-control {
+.form-control,
+.col-6-bg-color {
   background-color: #16213e;
 }
 

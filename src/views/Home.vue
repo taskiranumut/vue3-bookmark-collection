@@ -25,21 +25,10 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <div class="container">
-    <div class="col-6 offset-3 border p-3">
-      <NewBookmarkButton />
-      <BookmarkItem
-        v-for="bookmark in bookmarkList"
-        :key="bookmark.id"
-        :bookmark="bookmark"
-      />
-    </div>
-  </div>
+  <NewBookmarkButton />
+  <BookmarkItem
+    v-for="bookmark in bookmarkList"
+    :key="bookmark.id"
+    :bookmark="bookmark"
+  />
 </template>
-
-<style scoped>
-.col-6 {
-  background-color: #16213e;
-}
-</style>
