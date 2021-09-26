@@ -1,10 +1,10 @@
 <script>
 import { mapMutations } from "vuex";
-// import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
-      description: "",
+      description: null,
     };
   },
   methods: {
@@ -22,19 +22,12 @@ export default {
 
 <template>
   <div class="my-3">
-    <label class="mb-1" for="textarea-description">Description</label>
+    <label class="form-label mb-1">Description</label>
     <textarea
       v-model="description"
-      id="textarea-description"
       class="form-control"
       rows="3"
       placeholder="Description"
     ></textarea>
   </div>
 </template>
-
-<style scoped>
-label {
-  color: #e94560;
-}
-</style>

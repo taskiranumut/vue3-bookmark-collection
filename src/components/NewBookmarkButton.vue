@@ -11,7 +11,6 @@ export default {
       this.$router.push({
         name: "AddBookmark",
       });
-      console.log("newBookmark works");
     },
   },
 };

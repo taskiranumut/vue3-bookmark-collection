@@ -8,6 +8,12 @@
 
 body {
   background-color: #1a1a2e;
+}
+
+body,
+.form-control,
+.form-control:focus,
+.form-control::placeholder {
   color: #e6e6e6;
 }
 
@@ -15,23 +21,24 @@ body {
   border-radius: 5px;
 }
 
-.btn:focus {
+.btn:focus,
+.form-control:focus {
   box-shadow: none;
 }
 
 .form-control {
   background-color: #16213e;
-  color: #e6e6e6;
 }
 
 .form-control:focus {
   background-color: #0f3460;
-  color: #e6e6e6;
   border: 1px solid #e6e6e6;
-  box-shadow: none;
 }
 
 .form-control::placeholder {
-  color: #e6e6e6;
   opacity: 0.7;
+}
+
+.form-label {
+  color: #e94560;
 }

@@ -4,7 +4,7 @@ import { mapMutations } from "vuex";
 export default {
   data() {
     return {
-      title: "",
+      title: null,
     };
   },
   methods: {
@@ -22,20 +22,13 @@ export default {
 
 <template>
   <div class="my-3">
-    <label class="mb-1" for="input-title">Title</label>
+    <label class="form-label mb-1">Title</label>
     <input
       v-model="title"
       type="text"
-      id="input-title"
       class="form-control"
       placeholder="Title"
       required
     />
   </div>
 </template>
-
-<style scoped>
-label {
-  color: #e94560;
-}
-</style>

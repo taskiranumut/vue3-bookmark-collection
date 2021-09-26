@@ -37,11 +37,11 @@ export default {
 
 <style scoped>
 .bg-hover:hover {
-  background-color: #0f3460;
   cursor: pointer;
 }
 
-.bgColor {
+.bgColor,
+.bg-hover:hover {
   background-color: #0f3460;
 }
 </style>

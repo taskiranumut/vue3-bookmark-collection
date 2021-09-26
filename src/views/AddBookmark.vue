@@ -1,15 +1,3 @@
-<template>
-  <AppHeader />
-  <div class="container">
-    <div class="col-6 offset-3 border p-3">
-      <FormInputTitle />
-      <FormInputUrl />
-      <FormTextareaDescription />
-      <FormActionButtons />
-    </div>
-  </div>
-</template>
-
 <script>
 import FormInputTitle from "@/components/FormInputTitle.vue";
 import FormInputUrl from "@/components/FormInputUrl.vue";
@@ -25,6 +13,18 @@ export default {
   },
 };
 </script>
+
+<template>
+  <AppHeader />
+  <div class="container">
+    <div class="col-6 offset-3 border p-3">
+      <FormInputTitle />
+      <FormInputUrl />
+      <FormTextareaDescription />
+      <FormActionButtons />
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .col-6 {
