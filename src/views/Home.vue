@@ -9,11 +9,11 @@ export default {
     BookmarkItem,
   },
   created() {
-    this.fillBookmarkList();
+    this.getBookmarkList();
   },
   methods: {
     ...mapActions({
-      fillBookmarkList: "fillBookmarkList",
+      getBookmarkList: "getBookmarkList",
     }),
   },
   computed: {

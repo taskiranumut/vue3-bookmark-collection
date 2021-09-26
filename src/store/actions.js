@@ -1,7 +1,7 @@
 import { appAxios } from "@/utils/appAxios";
 
 export default {
-  fillBookmarkList({ commit }) {
+  getBookmarkList({ commit }) {
     appAxios
       .get("/")
       .then((res) => res.data)
