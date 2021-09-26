@@ -2,9 +2,6 @@ export default {
   fillBookmarkList(state, list) {
     state.bookmarkList = list;
   },
-  addToBookmarkList(state, bookmark) {
-    state.bookmarkList.push(bookmark);
-  },
   setBookmarkTitle(state, title) {
     state.bookmarkItems.bookmarkTitle = title;
   },

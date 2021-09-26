@@ -3,9 +3,12 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   methods: {
-    handleSaveBookmark() {
+    async handleSaveBookmark() {
       const bookmark = { ...this.bookmarkItems };
-      this.postBookmarkToApi(bookmark);
+      await this.postBookmarkToApi(bookmark);
+      this.getRouteHome();
+    },
+    getRouteHome() {
       this.$router.push({
         name: "Home",
       });
