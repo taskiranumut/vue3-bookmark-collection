@@ -1,7 +1,7 @@
 <script>
-import BookmarkDetails from "@/components/BookmarkDetails.vue";
-import BookmarkActionButtons from "@/components/BookmarkActionButtons.vue";
-import BookmarkLink from "@/components/BookmarkLink.vue";
+import BookmarkDetails from "@/components/bookmark/BookmarkDetails.vue";
+import BookmarkActionButtons from "@/components/bookmark/BookmarkActionButtons.vue";
+import BookmarkLink from "@/components/bookmark/BookmarkLink.vue";
 
 export default {
   components: {

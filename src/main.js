@@ -6,7 +6,7 @@ import { appAxios } from "./utils/appAxios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@/assets/main.css";
-import AppHeader from "@/components/AppHeader.vue";
+import AppHeader from "@/components/shared/AppHeader.vue";
 
 const app = createApp(App);
 app.use(store);

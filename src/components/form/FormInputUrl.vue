@@ -1,20 +1,20 @@
 <script>
 import { mapMutations } from "vuex";
-// import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
-      title: null,
+      url: null,
     };
   },
   methods: {
     ...mapMutations({
-      setBookmarkTitle: "setBookmarkTitle",
+      setBookmarkUrl: "setBookmarkUrl",
     }),
   },
   watch: {
-    title() {
-      this.setBookmarkTitle(this.title);
+    url() {
+      this.setBookmarkUrl(this.url);
     },
   },
 };
@@ -22,12 +22,12 @@ export default {
 
 <template>
   <div class="my-3">
-    <label class="form-label mb-1">Title</label>
+    <label class="form-label mb-1">URL</label>
     <input
-      v-model="title"
+      v-model="url"
       type="text"
       class="form-control"
-      placeholder="Title"
+      placeholder="URL"
       required
     />
   </div>

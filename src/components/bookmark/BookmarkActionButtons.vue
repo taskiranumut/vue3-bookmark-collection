@@ -1,6 +1,6 @@
 <script>
-import BookmarkDeleteButton from "@/components/BookmarkDeleteButton.vue";
-import BookmarkEditButton from "@/components/BookmarkEditButton.vue";
+import BookmarkDeleteButton from "@/components/bookmark/BookmarkDeleteButton.vue";
+import BookmarkEditButton from "@/components/bookmark/BookmarkEditButton.vue";
 
 export default {
   components: {

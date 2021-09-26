@@ -1,6 +1,6 @@
 <script>
-import FormSaveButton from "@/components/FormSaveButton.vue";
-import FormCancelButton from "@/components/FormCancelButton.vue";
+import FormSaveButton from "@/components/form/FormSaveButton.vue";
+import FormCancelButton from "@/components/form/FormCancelButton.vue";
 
 export default {
   components: {

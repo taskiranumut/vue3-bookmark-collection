@@ -1,6 +1,6 @@
 <script>
-import NewBookmarkButton from "@/components/NewBookmarkButton.vue";
-import BookmarkItem from "@/components/BookmarkItem.vue";
+import NewBookmarkButton from "@/components/bookmark/NewBookmarkButton.vue";
+import BookmarkItem from "@/components/bookmark/BookmarkItem.vue";
 import { mapActions, mapGetters } from "vuex";
 
 export default {

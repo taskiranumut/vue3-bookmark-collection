@@ -1,9 +1,3 @@
-<template>
-  <div class="d-flex justify-content-end mb-3">
-    <button @click="newBookmark" class="btn border">+ New</button>
-  </div>
-</template>
-
 <script>
 export default {
   methods: {
@@ -15,6 +9,12 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="d-flex justify-content-end mb-3">
+    <button @click="newBookmark" class="btn border">+ New</button>
+  </div>
+</template>
 
 <style scoped>
 .btn {

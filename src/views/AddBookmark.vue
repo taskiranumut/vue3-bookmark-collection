@@ -1,8 +1,8 @@
 <script>
-import FormInputTitle from "@/components/FormInputTitle.vue";
-import FormInputUrl from "@/components/FormInputUrl.vue";
-import FormTextareaDescription from "@/components/FormTextareaDescription.vue";
-import FormActionButtons from "@/components/FormActionButtons.vue";
+import FormInputTitle from "@/components/form/FormInputTitle.vue";
+import FormInputUrl from "@/components/form/FormInputUrl.vue";
+import FormTextareaDescription from "@/components/form/FormTextareaDescription.vue";
+import FormActionButtons from "@/components/form/FormActionButtons.vue";
 
 export default {
   components: {
@@ -17,7 +17,7 @@ export default {
 <template>
   <AppHeader />
   <div class="container">
-    <div class="col-6 offset-3 border p-3">
+    <div class="col-6 form-bg-color offset-3 border p-3">
       <FormInputTitle />
       <FormInputUrl />
       <FormTextareaDescription />
@@ -27,7 +27,7 @@ export default {
 </template>
 
 <style scoped>
-.col-6 {
+.form-bg-color {
   background-color: #16213e;
 }
 </style>
