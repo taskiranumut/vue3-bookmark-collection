@@ -1,5 +1,5 @@
 <script>
-import { mapMutations } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   data() {
@@ -7,9 +7,20 @@ export default {
       title: null,
     };
   },
+  mounted() {
+    this.checkBookmarkTitle();
+  },
   methods: {
+    checkBookmarkTitle() {
+      if (this.bookmarkTitle) this.title = this.bookmarkTitle;
+    },
     ...mapMutations({
       setBookmarkTitle: "setBookmarkTitle",
+    }),
+  },
+  computed: {
+    ...mapGetters({
+      bookmarkTitle: "_bookmarkTitle",
     }),
   },
   watch: {

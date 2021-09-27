@@ -22,4 +22,11 @@ export default {
       .then(() => commit("deleteBookmarkFromBookmarkList", bookmarkId))
       .catch((err) => console.log("deleteBookmarkFromApi error: ", err));
   },
+  updateBookmarkToApi({ commit }, bookmark) {
+    return appAxios
+      .put(`/${bookmark.id}`, bookmark)
+      .then(() => commit("resetBookmarkItems"))
+      .then(() => commit("setIsEdit", false))
+      .catch((err) => console.log("updateBookmarkToApi error: ", err));
+  },
 };

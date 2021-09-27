@@ -1,5 +1,5 @@
 <script>
-import { mapMutations } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   data() {
@@ -7,9 +7,20 @@ export default {
       url: null,
     };
   },
+  mounted() {
+    this.checkBookmarkUrl();
+  },
   methods: {
+    checkBookmarkUrl() {
+      if (this.bookmarkUrl) this.url = this.bookmarkUrl;
+    },
     ...mapMutations({
       setBookmarkUrl: "setBookmarkUrl",
+    }),
+  },
+  computed: {
+    ...mapGetters({
+      bookmarkUrl: "_bookmarkUrl",
     }),
   },
   watch: {

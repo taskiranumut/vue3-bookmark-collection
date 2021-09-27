@@ -1,11 +1,18 @@
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapState } from "vuex";
 
 export default {
   methods: {
     async handleSaveBookmark() {
-      const bookmark = { ...this.bookmarkItems };
-      await this.postBookmarkToApi(bookmark);
+      if (this.isEdit) {
+        const bookmarkId = this.$route.params.id;
+        const bookmark = { ...this.bookmarkItems, id: bookmarkId };
+        console.log(bookmark);
+        await this.updateBookmarkToApi(bookmark);
+      } else {
+        const bookmark = { ...this.bookmarkItems };
+        await this.postBookmarkToApi(bookmark);
+      }
       this.getRouteHome();
     },
     getRouteHome() {
@@ -15,9 +22,13 @@ export default {
     },
     ...mapActions({
       postBookmarkToApi: "postBookmarkToApi",
+      updateBookmarkToApi: "updateBookmarkToApi",
     }),
   },
   computed: {
+    ...mapState({
+      isEdit: "isEdit",
+    }),
     ...mapGetters({
       bookmarkItems: "_bookmarkItems",
     }),

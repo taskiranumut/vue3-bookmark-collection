@@ -5,4 +5,5 @@ export default {
     bookmarkUrl: null,
     bookmarkDescription: null,
   },
+  isEdit: false,
 };

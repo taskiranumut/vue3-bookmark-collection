@@ -13,7 +13,7 @@ export default {
 
 <template>
   <div class="d-flex justify-content-between m-1 p-1">
-    <BookmarkEditButton />
+    <BookmarkEditButton :bookmarkId="bookmarkId" />
     <BookmarkDeleteButton :bookmarkId="bookmarkId" />
   </div>
 </template>
