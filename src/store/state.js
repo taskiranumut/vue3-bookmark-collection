@@ -4,6 +4,7 @@ export default {
     bookmarkTitle: null,
     bookmarkUrl: null,
     bookmarkDescription: null,
+    id: null,
   },
   isEdit: false,
 };

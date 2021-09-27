@@ -4,14 +4,9 @@ import { mapActions, mapGetters, mapState } from "vuex";
 export default {
   methods: {
     async handleSaveBookmark() {
-      if (this.isEdit) {
-        const bookmarkId = this.$route.params.id;
-        const bookmark = { ...this.bookmarkItems, id: bookmarkId };
-        await this.updateBookmarkToApi(bookmark);
-      } else {
-        const bookmark = { ...this.bookmarkItems };
-        await this.postBookmarkToApi(bookmark);
-      }
+      const bookmark = { ...this.bookmarkItems };
+      if (this.isEdit) await this.updateBookmarkToApi(bookmark);
+      else await this.postBookmarkToApi(bookmark);
       this.getRouteHome();
     },
     getRouteHome() {
