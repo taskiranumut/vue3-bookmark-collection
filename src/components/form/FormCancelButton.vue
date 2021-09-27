@@ -1,11 +1,18 @@
 <script>
+import { mapMutations } from "vuex";
 export default {
   methods: {
     handleCancelBookmark() {
+      this.setIsEdit(false);
+      this.resetBookmarkItems();
       this.$router.push({
         name: "Home",
       });
     },
+    ...mapMutations({
+      setIsEdit: "setIsEdit",
+      resetBookmarkItems: "resetBookmarkItems",
+    }),
   },
 };
 </script>
