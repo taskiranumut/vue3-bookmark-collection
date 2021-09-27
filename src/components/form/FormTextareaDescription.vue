@@ -7,13 +7,7 @@ export default {
       description: null,
     };
   },
-  mounted() {
-    this.checkBookmarkDescription();
-  },
   methods: {
-    checkBookmarkDescription() {
-      if (this.bookmarkDescription) this.description = this.bookmarkDescription;
-    },
     ...mapMutations({
       setBookmarkDescription: "setBookmarkDescription",
     }),
@@ -26,6 +20,9 @@ export default {
   watch: {
     description() {
       this.setBookmarkDescription(this.description);
+    },
+    bookmarkDescription() {
+      this.description = this.bookmarkDescription;
     },
   },
 };

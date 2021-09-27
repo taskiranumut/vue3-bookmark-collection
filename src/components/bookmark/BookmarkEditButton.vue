@@ -1,5 +1,5 @@
 <script>
-import { mapMutations, mapState } from "vuex";
+import { mapMutations } from "vuex";
 
 export default {
   props: ["bookmarkId"],
@@ -7,11 +7,9 @@ export default {
     editBookmark(e) {
       e.stopPropagation();
       this.setIsEdit(true);
-      this.getRouteEditBookmark(this.bookmarkId);
-      const bookmark = this.getBookmarkFromBookmarkListById(this.bookmarkId);
-      this.setBookmarkItems(bookmark);
+      this.goEditBookmarkView(this.bookmarkId);
     },
-    getRouteEditBookmark(bookmarkId) {
+    goEditBookmarkView(bookmarkId) {
       this.$router.push({
         name: "EditBookmark",
         params: {
@@ -19,21 +17,9 @@ export default {
         },
       });
     },
-    getBookmarkFromBookmarkListById(bookmarkId) {
-      return this.bookmarkList.filter((item) => item.id === bookmarkId)[0];
-    },
     ...mapMutations({
-      setBookmarkItems: "setBookmarkItems",
       setIsEdit: "setIsEdit",
     }),
-  },
-  computed: {
-    ...mapState({
-      bookmarkList: "bookmarkList",
-    }),
-    // ...mapGetters({
-    //   bookmarkList: "_bookmarkList",
-    // }),
   },
 };
 </script>

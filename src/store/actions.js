@@ -10,6 +10,13 @@ export default {
       })
       .catch((err) => console.log("getBookmarkList error: ", err));
   },
+  getBookmarkFromApiById({ commit }, bookmarkId) {
+    return appAxios
+      .get(`/${bookmarkId}`)
+      .then((res) => res.data)
+      .then((bookmark) => commit("setBookmarkItems", bookmark))
+      .catch((err) => console.log("getBookmarkFromApiById error: ", err));
+  },
   postBookmarkToApi({ commit }, bookmark) {
     return appAxios
       .post("/", bookmark)

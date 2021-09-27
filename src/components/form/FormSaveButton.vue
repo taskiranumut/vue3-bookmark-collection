@@ -7,7 +7,6 @@ export default {
       if (this.isEdit) {
         const bookmarkId = this.$route.params.id;
         const bookmark = { ...this.bookmarkItems, id: bookmarkId };
-        console.log(bookmark);
         await this.updateBookmarkToApi(bookmark);
       } else {
         const bookmark = { ...this.bookmarkItems };

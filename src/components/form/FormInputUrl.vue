@@ -7,13 +7,7 @@ export default {
       url: null,
     };
   },
-  mounted() {
-    this.checkBookmarkUrl();
-  },
   methods: {
-    checkBookmarkUrl() {
-      if (this.bookmarkUrl) this.url = this.bookmarkUrl;
-    },
     ...mapMutations({
       setBookmarkUrl: "setBookmarkUrl",
     }),
@@ -26,6 +20,9 @@ export default {
   watch: {
     url() {
       this.setBookmarkUrl(this.url);
+    },
+    bookmarkUrl() {
+      this.url = this.bookmarkUrl;
     },
   },
 };

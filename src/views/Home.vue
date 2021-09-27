@@ -1,7 +1,7 @@
 <script>
 import NewBookmarkButton from "@/components/bookmark/NewBookmarkButton.vue";
 import BookmarkItem from "@/components/bookmark/BookmarkItem.vue";
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   components: {
@@ -17,8 +17,8 @@ export default {
     }),
   },
   computed: {
-    ...mapGetters({
-      bookmarkList: "_bookmarkList",
+    ...mapState({
+      bookmarkList: "bookmarkList",
     }),
   },
 };

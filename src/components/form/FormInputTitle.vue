@@ -7,13 +7,7 @@ export default {
       title: null,
     };
   },
-  mounted() {
-    this.checkBookmarkTitle();
-  },
   methods: {
-    checkBookmarkTitle() {
-      if (this.bookmarkTitle) this.title = this.bookmarkTitle;
-    },
     ...mapMutations({
       setBookmarkTitle: "setBookmarkTitle",
     }),
@@ -26,6 +20,9 @@ export default {
   watch: {
     title() {
       this.setBookmarkTitle(this.title);
+    },
+    bookmarkTitle() {
+      this.title = this.bookmarkTitle;
     },
   },
 };
