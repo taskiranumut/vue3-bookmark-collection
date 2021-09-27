@@ -1,12 +1,9 @@
 <script>
-import { mapMutations } from "vuex";
-
 export default {
   props: ["bookmarkId"],
   methods: {
     editBookmark(e) {
       e.stopPropagation();
-      this.setIsEdit(true);
       this.goEditBookmarkView(this.bookmarkId);
     },
     goEditBookmarkView(bookmarkId) {
@@ -17,9 +14,6 @@ export default {
         },
       });
     },
-    ...mapMutations({
-      setIsEdit: "setIsEdit",
-    }),
   },
 };
 </script>
