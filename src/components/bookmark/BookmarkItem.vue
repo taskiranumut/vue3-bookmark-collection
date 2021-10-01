@@ -32,7 +32,9 @@ export default {
     <BookmarkLink :bookmark="bookmark" />
     <BookmarkActionButtons :bookmarkId="bookmark.id" />
   </div>
-  <BookmarkDetails v-if="bookmarkDetailsIsActive" :bookmark="bookmark" />
+  <transition name="fade">
+    <BookmarkDetails v-if="bookmarkDetailsIsActive" :bookmark="bookmark" />
+  </transition>
 </template>
 
 <style scoped>
@@ -43,5 +45,23 @@ export default {
 .bgColor,
 .bg-hover:hover {
   background-color: #0f3460;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  transition: all 0.15s ease;
 }
 </style>
