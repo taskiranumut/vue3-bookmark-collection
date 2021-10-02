@@ -26,9 +26,14 @@ export default {
 
 <template>
   <NewBookmarkButton />
-  <BookmarkItem
-    v-for="bookmark in bookmarkList"
-    :key="bookmark.id"
-    :bookmark="bookmark"
-  />
+  <div class="text-center mb-3" v-if="bookmarkList.length === 0">
+    <span class="p-2 border">Empty bookmark list</span>
+  </div>
+  <div v-else>
+    <BookmarkItem
+      v-for="bookmark in bookmarkList"
+      :key="bookmark.id"
+      :bookmark="bookmark"
+    />
+  </div>
 </template>
