@@ -2,28 +2,23 @@
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
-  data() {
-    return {
-      url: null,
-    };
-  },
   methods: {
     ...mapMutations({
       setBookmarkUrl: "setBookmarkUrl",
     }),
   },
   computed: {
+    url: {
+      get() {
+        return this.bookmarkUrl;
+      },
+      set(url) {
+        this.setBookmarkUrl(url);
+      },
+    },
     ...mapGetters({
       bookmarkUrl: "_bookmarkUrl",
     }),
-  },
-  watch: {
-    url() {
-      this.setBookmarkUrl(this.url);
-    },
-    bookmarkUrl() {
-      this.url = this.bookmarkUrl;
-    },
   },
 };
 </script>
