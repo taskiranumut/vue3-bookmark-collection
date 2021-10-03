@@ -28,4 +28,10 @@ export default {
   setIsEdit(state, status) {
     state.isEdit = status;
   },
+  setDidGetBookmarkList(state, status) {
+    state.spinnerCheck.didGetBookmarkList = status;
+  },
+  setDidGetBookmark(state, status) {
+    state.spinnerCheck.didGetBookmark = status;
+  },
 };

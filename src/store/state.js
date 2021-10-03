@@ -7,4 +7,8 @@ export default {
     id: null,
   },
   isEdit: false,
+  spinnerCheck: {
+    didGetBookmarkList: false,
+    didGetBookmark: false,
+  },
 };

@@ -2,19 +2,23 @@ import { appAxios } from "@/utils/appAxios";
 
 export default {
   getBookmarkList({ commit }) {
+    commit("setDidGetBookmarkList", true);
     return appAxios
       .get("/")
       .then((res) => res.data)
       .then((bookmarkList) => {
         commit("fillBookmarkList", bookmarkList);
       })
+      .then(() => commit("setDidGetBookmarkList", false))
       .catch((err) => console.log("getBookmarkList error: ", err));
   },
   getBookmarkFromApiById({ commit }, bookmarkId) {
+    commit("setDidGetBookmark", true);
     return appAxios
       .get(`/${bookmarkId}`)
       .then((res) => res.data)
       .then((bookmark) => commit("setBookmarkItems", bookmark))
+      .then(() => commit("setDidGetBookmark", false))
       .catch((err) => console.log("getBookmarkFromApiById error: ", err));
   },
   postBookmarkToApi({ commit }, bookmark) {
