@@ -3,7 +3,8 @@ import FormInputTitle from "@/components/form/FormInputTitle.vue";
 import FormInputUrl from "@/components/form/FormInputUrl.vue";
 import FormTextareaDescription from "@/components/form/FormTextareaDescription.vue";
 import FormActionButtons from "@/components/form/FormActionButtons.vue";
-import { mapActions, mapMutations } from "vuex";
+import Spinner from "@/components/shared/Spinner.vue";
+import { mapActions, mapMutations, mapState } from "vuex";
 
 export default {
   components: {
@@ -11,6 +12,7 @@ export default {
     FormInputUrl,
     FormTextareaDescription,
     FormActionButtons,
+    Spinner,
   },
   created() {
     this.setIsEdit(true);
@@ -25,12 +27,20 @@ export default {
       setIsEdit: "setIsEdit",
     }),
   },
+  computed: {
+    ...mapState({
+      spinnerCheck: "spinnerCheck",
+    }),
+  },
 };
 </script>
 
 <template>
-  <FormInputTitle />
-  <FormInputUrl />
-  <FormTextareaDescription />
-  <FormActionButtons />
+  <Spinner v-if="spinnerCheck.didGetBookmark" />
+  <div v-else>
+    <FormInputTitle />
+    <FormInputUrl />
+    <FormTextareaDescription />
+    <FormActionButtons />
+  </div>
 </template>
