@@ -2,7 +2,7 @@
 import NewBookmarkButton from "@/components/bookmark/NewBookmarkButton.vue";
 import BookmarkItem from "@/components/bookmark/BookmarkItem.vue";
 import Spinner from "@/components/shared/Spinner.vue";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapGetters, mapState } from "vuex";
 
 export default {
   components: {
@@ -19,9 +19,11 @@ export default {
     }),
   },
   computed: {
+    ...mapGetters({
+      didGetBookmarkList: "_didGetBookmarkList",
+    }),
     ...mapState({
       bookmarkList: "bookmarkList",
-      spinnerCheck: "spinnerCheck",
     }),
   },
 };
@@ -29,7 +31,7 @@ export default {
 
 <template>
   <NewBookmarkButton />
-  <Spinner v-if="spinnerCheck.didGetBookmarkList" />
+  <Spinner v-if="didGetBookmarkList" />
   <div class="text-center mb-3" v-else-if="bookmarkList.length === 0">
     <span class="p-2 border">Empty bookmark list</span>
   </div>

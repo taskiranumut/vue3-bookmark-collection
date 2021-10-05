@@ -4,7 +4,7 @@ import FormInputUrl from "@/components/form/FormInputUrl.vue";
 import FormTextareaDescription from "@/components/form/FormTextareaDescription.vue";
 import FormActionButtons from "@/components/form/FormActionButtons.vue";
 import Spinner from "@/components/shared/Spinner.vue";
-import { mapActions, mapMutations, mapState } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -28,15 +28,15 @@ export default {
     }),
   },
   computed: {
-    ...mapState({
-      spinnerCheck: "spinnerCheck",
+    ...mapGetters({
+      didGetBookmark: "_didGetBookmark",
     }),
   },
 };
 </script>
 
 <template>
-  <Spinner v-if="spinnerCheck.didGetBookmark" />
+  <Spinner v-if="didGetBookmark" />
   <div v-else>
     <FormInputTitle />
     <FormInputUrl />
