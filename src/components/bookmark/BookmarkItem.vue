@@ -25,7 +25,7 @@ export default {
 
 <template>
   <div
-    class="d-flex justify-content-between border bg-hover px-4 mt-4"
+    class="d-flex justify-content-between border rounded-3 bg-hover px-4 mt-4"
     :class="{ bgColor: bookmarkDetailsIsActive }"
     @click="showDetails"
   >

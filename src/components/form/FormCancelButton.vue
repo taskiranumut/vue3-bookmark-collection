@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <button @click="handleCancelBookmark" class="btn cancel-btn border">
+  <button @click="handleCancelBookmark" class="btn cancel-btn border rounded-3">
     Cancel
   </button>
 </template>

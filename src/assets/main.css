@@ -17,10 +17,6 @@ body,
   color: #e6e6e6;
 }
 
-.border {
-  border-radius: 5px;
-}
-
 .btn:focus,
 .form-control:focus {
   box-shadow: none;

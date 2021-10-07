@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="d-flex justify-content-end mb-3">
-    <button @click="newBookmark" class="btn border">+ New</button>
+    <button @click="newBookmark" class="btn border rounded-3">+ New</button>
   </div>
 </template>
 

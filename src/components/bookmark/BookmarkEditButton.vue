@@ -19,7 +19,11 @@ export default {
 </script>
 
 <template>
-  <button @click="editBookmark" class="btn border p-0 px-1 me-2" title="Edit">
+  <button
+    @click="editBookmark"
+    class="btn border rounded-3 p-0 px-1 me-2"
+    title="Edit"
+  >
     <span><i class="fas fa-pen fa-lg"></i></span>
   </button>
 </template>

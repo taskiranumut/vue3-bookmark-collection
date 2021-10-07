@@ -31,7 +31,10 @@ export default {
 </script>
 
 <template>
-  <button @click="handleSaveBookmark" class="btn save-btn border me-2">
+  <button
+    @click="handleSaveBookmark"
+    class="btn save-btn border rounded-3 me-2"
+  >
     Save
   </button>
 </template>

@@ -33,7 +33,7 @@ export default {
   <NewBookmarkButton />
   <Spinner v-if="didGetBookmarkList" />
   <div class="text-center mb-3" v-else-if="bookmarkList.length === 0">
-    <span class="p-2 border">Empty bookmark list</span>
+    <span class="p-2 border rounded-3">Empty bookmark list</span>
   </div>
   <div v-else>
     <BookmarkItem
