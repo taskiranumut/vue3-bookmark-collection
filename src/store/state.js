@@ -10,5 +10,6 @@ export default {
   spinnerCheck: {
     didGetBookmarkList: false,
     didGetBookmark: false,
+    isSaveButton: false,
   },
 };

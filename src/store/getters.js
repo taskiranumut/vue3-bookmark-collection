@@ -6,4 +6,5 @@ export default {
   _bookmarkDescription: (state) => state.bookmarkItems.bookmarkDescription,
   _didGetBookmarkList: (state) => state.spinnerCheck.didGetBookmarkList,
   _didGetBookmark: (state) => state.spinnerCheck.didGetBookmark,
+  _isSaveButton: (state) => state.spinnerCheck.isSaveButton,
 };

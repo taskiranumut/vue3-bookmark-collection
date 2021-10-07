@@ -1,13 +1,19 @@
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
+import SaveSpinner from "@/components/shared/SaveSpinner";
+import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 
 export default {
+  components: {
+    SaveSpinner,
+  },
   methods: {
     async handleSaveBookmark() {
+      this.setIsSaveButton(true);
       const bookmark = { ...this.bookmarkItems };
       if (this.isEdit) await this.updateBookmarkToApi(bookmark);
       else await this.postBookmarkToApi(bookmark);
       this.getRouteHome();
+      this.setIsSaveButton(false);
     },
     getRouteHome() {
       this.$router.push({
@@ -18,6 +24,7 @@ export default {
       postBookmarkToApi: "postBookmarkToApi",
       updateBookmarkToApi: "updateBookmarkToApi",
     }),
+    ...mapMutations(["setIsSaveButton"]),
   },
   computed: {
     ...mapState({
@@ -25,6 +32,7 @@ export default {
     }),
     ...mapGetters({
       bookmarkItems: "_bookmarkItems",
+      isSaveButton: "_isSaveButton",
     }),
   },
 };
@@ -35,7 +43,8 @@ export default {
     @click="handleSaveBookmark"
     class="btn save-btn border rounded-3 me-2"
   >
-    Save
+    <span v-if="isSaveButton"><SaveSpinner /></span>
+    <span v-else>Save</span>
   </button>
 </template>
 

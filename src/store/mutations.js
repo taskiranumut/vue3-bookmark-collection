@@ -34,4 +34,7 @@ export default {
   setDidGetBookmark(state, status) {
     state.spinnerCheck.didGetBookmark = status;
   },
+  setIsSaveButton(state, status) {
+    state.spinnerCheck.isSaveButton = status;
+  },
 };
