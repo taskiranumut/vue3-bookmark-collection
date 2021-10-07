@@ -1,12 +1,23 @@
 <script>
+import DeleteSpinner from "@/components/shared/DeleteSpinner";
 import { mapActions } from "vuex";
 
 export default {
   props: ["bookmarkId"],
+  components: {
+    DeleteSpinner,
+  },
+  data() {
+    return {
+      isDeleteButton: false,
+    };
+  },
   methods: {
-    deleteBookmark(e) {
+    async deleteBookmark(e) {
+      this.isDeleteButton = true;
       e.stopPropagation();
-      this.deleteBookmarkFromApi(this.bookmarkId);
+      await this.deleteBookmarkFromApi(this.bookmarkId);
+      this.isDeleteButton = false;
     },
     ...mapActions({
       deleteBookmarkFromApi: "deleteBookmarkFromApi",
@@ -21,7 +32,8 @@ export default {
     class="btn action-btn border rounded-3 p-0 px-1"
     title="Delete"
   >
-    <span><i class="fas fa-trash-alt fa-lg"></i></span>
+    <span v-if="isDeleteButton"><DeleteSpinner /></span>
+    <span v-else><i class="fas fa-trash-alt fa-lg"></i></span>
   </button>
 </template>
 
