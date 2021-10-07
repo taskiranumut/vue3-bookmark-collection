@@ -12,17 +12,23 @@ export default {
 
 <template>
   <div class="d-flex justify-content-end mb-3">
-    <button @click="newBookmark" class="btn border rounded-3">+ New</button>
+    <button
+      @click="newBookmark"
+      class="btn new-btn border rounded-3"
+      title="New Bookmark"
+    >
+      + New
+    </button>
   </div>
 </template>
 
 <style scoped>
-.btn {
+.new-btn {
   background-color: #e9445fb3;
   color: #e6e6e6;
 }
 
-.btn:hover {
+.new-btn:hover {
   background-color: #e9445f;
   color: #e6e6e6;
   font-weight: bold;

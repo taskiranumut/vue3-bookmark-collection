@@ -17,16 +17,3 @@ export default {
     <BookmarkDeleteButton :bookmarkId="bookmarkId" />
   </div>
 </template>
-
-<style scoped>
-.btn {
-  width: 40px;
-  height: 40px;
-  color: #e9445fb3;
-}
-
-.btn:hover {
-  font-size: 125%;
-  color: #e94560;
-}
-</style>

@@ -21,9 +21,22 @@ export default {
 <template>
   <button
     @click="editBookmark"
-    class="btn border rounded-3 p-0 px-1 me-2"
+    class="btn action-btn border rounded-3 p-0 px-1 me-2"
     title="Edit"
   >
     <span><i class="fas fa-pen fa-lg"></i></span>
   </button>
 </template>
+
+<style scoped>
+.action-btn {
+  width: 40px;
+  height: 40px;
+  color: #e9445fb3;
+}
+
+.action-btn:hover {
+  font-size: 125%;
+  color: #e94560;
+}
+</style>
