@@ -7,6 +7,17 @@ export default {
     id: null,
   },
   isEdit: false,
+  formCheck: {
+    title: {
+      isValid: false,
+      isActiveWarn: false,
+    },
+    url: {
+      isValid: false,
+      isActiveWarn: false,
+    },
+  },
+  checkWarningStatus: false,
   spinnerCheck: {
     didGetBookmarkList: false,
     didGetBookmark: false,
