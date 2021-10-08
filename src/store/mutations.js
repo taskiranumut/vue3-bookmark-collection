@@ -28,6 +28,12 @@ export default {
   setIsEdit(state, status) {
     state.isEdit = status;
   },
+  setIsValid(state, payload) {
+    state.formCheck[payload.formEl].isValid = payload.status;
+  },
+  setIsActiveWarn(state, payload) {
+    state.formCheck[payload.formEl].isActiveWarn = payload.status;
+  },
   setDidGetBookmarkList(state, status) {
     state.spinnerCheck.didGetBookmarkList = status;
   },
