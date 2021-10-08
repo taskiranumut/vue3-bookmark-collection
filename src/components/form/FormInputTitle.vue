@@ -3,9 +3,16 @@ import { mapGetters, mapMutations } from "vuex";
 
 export default {
   methods: {
-    ...mapMutations({
-      setBookmarkTitle: "setBookmarkTitle",
-    }),
+    checkValidity() {
+      let status = false;
+      if (this.title) {
+        status = this.title.split("").some((char) => char !== " ");
+        this.setIsValid({ formEl: "title", status });
+      }
+      this.setIsValid({ formEl: "title", status });
+      this.setIsActiveWarn({ formEl: "title", status: !status });
+    },
+    ...mapMutations(["setBookmarkTitle", "setIsValid", "setIsActiveWarn"]),
   },
   computed: {
     title: {
@@ -33,6 +40,7 @@ export default {
       </div>
     </transition>
     <input
+      @blur="checkValidity"
       v-model="title"
       type="text"
       class="form-control"
