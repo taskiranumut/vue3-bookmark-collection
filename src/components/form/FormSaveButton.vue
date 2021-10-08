@@ -8,28 +8,36 @@ export default {
   },
   methods: {
     async handleSaveBookmark() {
-      this.setIsSaveButton(true);
-      const bookmark = { ...this.bookmarkItems };
-      if (this.isEdit) await this.updateBookmarkToApi(bookmark);
-      else await this.postBookmarkToApi(bookmark);
-      this.getRouteHome();
-      this.setIsSaveButton(false);
+      if (this.checkFormStatus()) {
+        this.setIsSaveButton(true);
+        const bookmark = { ...this.bookmarkItems };
+        if (this.isEdit) await this.updateBookmarkToApi(bookmark);
+        else await this.postBookmarkToApi(bookmark);
+        this.getRouteHome();
+        this.setIsSaveButton(false);
+      }
+    },
+    checkFormStatus() {
+      const statusList = [];
+      for (const property in this.formCheck) {
+        const isValid = this.formCheck[property].isValid;
+        if (!isValid) {
+          this.setIsActiveWarn({ formEl: property, status: true });
+        }
+        statusList.push(isValid);
+      }
+      return statusList.every((item) => item === true);
     },
     getRouteHome() {
       this.$router.push({
         name: "Home",
       });
     },
-    ...mapActions({
-      postBookmarkToApi: "postBookmarkToApi",
-      updateBookmarkToApi: "updateBookmarkToApi",
-    }),
-    ...mapMutations(["setIsSaveButton"]),
+    ...mapActions(["postBookmarkToApi", "updateBookmarkToApi"]),
+    ...mapMutations(["setIsSaveButton", "setIsActiveWarn"]),
   },
   computed: {
-    ...mapState({
-      isEdit: "isEdit",
-    }),
+    ...mapState(["isEdit", "formCheck"]),
     ...mapGetters({
       bookmarkItems: "_bookmarkItems",
       isSaveButton: "_isSaveButton",
