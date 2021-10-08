@@ -7,4 +7,6 @@ export default {
   _didGetBookmarkList: (state) => state.spinnerCheck.didGetBookmarkList,
   _didGetBookmark: (state) => state.spinnerCheck.didGetBookmark,
   _isSaveButton: (state) => state.spinnerCheck.isSaveButton,
+  _checkTitle: (state) => state.formCheck.title,
+  _checkUrl: (state) => state.formCheck.url,
 };
