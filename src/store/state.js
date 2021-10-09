@@ -17,7 +17,6 @@ export default {
       isActiveWarn: false,
     },
   },
-  checkWarningStatus: false,
   spinnerCheck: {
     didGetBookmarkList: false,
     didGetBookmark: false,
