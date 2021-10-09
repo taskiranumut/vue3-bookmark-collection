@@ -6,6 +6,9 @@ export default {
   components: {
     SaveSpinner,
   },
+  created() {
+    this.checkEditBookmarkView();
+  },
   methods: {
     async handleSaveBookmark() {
       if (this.checkFormStatus()) {
@@ -28,13 +31,19 @@ export default {
       }
       return statusList.every((item) => item === true);
     },
+    checkEditBookmarkView() {
+      if (this.isEdit) {
+        for (const property in this.formCheck)
+          this.setIsValid({ formEl: property, status: true });
+      }
+    },
     getRouteHome() {
       this.$router.push({
         name: "Home",
       });
     },
     ...mapActions(["postBookmarkToApi", "updateBookmarkToApi"]),
-    ...mapMutations(["setIsSaveButton", "setIsActiveWarn"]),
+    ...mapMutations(["setIsSaveButton", "setIsActiveWarn", "setIsValid"]),
   },
   computed: {
     ...mapState(["isEdit", "formCheck"]),
