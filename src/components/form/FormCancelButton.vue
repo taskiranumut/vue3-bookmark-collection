@@ -4,15 +4,12 @@ export default {
   methods: {
     handleCancelBookmark() {
       this.setIsEdit(false);
-      this.resetBookmarkItems();
+      this.resetStates();
       this.$router.push({
         name: "Home",
       });
     },
-    ...mapMutations({
-      setIsEdit: "setIsEdit",
-      resetBookmarkItems: "resetBookmarkItems",
-    }),
+    ...mapMutations(["setIsEdit", "resetStates"]),
   },
 };
 </script>

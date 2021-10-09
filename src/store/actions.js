@@ -24,7 +24,7 @@ export default {
   postBookmarkToApi({ commit }, bookmark) {
     return appAxios
       .post("/", bookmark)
-      .then(() => commit("resetBookmarkItems"))
+      .then(() => commit("resetStates"))
       .catch((err) => console.log("postBookmarkToApi error: ", err));
   },
   deleteBookmarkFromApi({ commit }, bookmarkId) {
@@ -36,7 +36,7 @@ export default {
   updateBookmarkToApi({ commit }, bookmark) {
     return appAxios
       .put(`/${bookmark.id}`, bookmark)
-      .then(() => commit("resetBookmarkItems"))
+      .then(() => commit("resetStates"))
       .then(() => commit("setIsEdit", false))
       .catch((err) => console.log("updateBookmarkToApi error: ", err));
   },

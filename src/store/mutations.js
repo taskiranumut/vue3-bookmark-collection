@@ -17,8 +17,14 @@ export default {
     state.bookmarkItems.bookmarkDescription = bookmark.bookmarkDescription;
     if (bookmark.id) state.bookmarkItems.id = bookmark.id;
   },
-  resetBookmarkItems(state) {
+  resetStates(state) {
     for (const key in state.bookmarkItems) state.bookmarkItems[key] = null;
+    const propertyList = ["isValid", "isActiveWarn"];
+    for (const key in state.formCheck) {
+      propertyList.forEach((item) => {
+        state.formCheck[key][item] = false;
+      });
+    }
   },
   deleteBookmarkFromBookmarkList(state, bookmarkId) {
     state.bookmarkList = state.bookmarkList.filter(
