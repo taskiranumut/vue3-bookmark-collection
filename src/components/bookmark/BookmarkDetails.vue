@@ -6,7 +6,9 @@ export default {
 
 <template>
   <div class="details p-2">
-    <p><span>Description: </span>{{ bookmark.bookmarkDescription }}</p>
+    <p v-if="bookmark.bookmarkDescription">
+      <span>Description: </span>{{ bookmark.bookmarkDescription }}
+    </p>
     <p class="mb-0">
       <span>URL: </span><i>{{ bookmark.bookmarkUrl }}</i>
     </p>
