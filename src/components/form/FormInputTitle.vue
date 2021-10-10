@@ -20,7 +20,8 @@ export default {
         return this.bookmarkTitle;
       },
       set(title) {
-        this.setBookmarkTitle(title);
+        const trimmedTitle = title.replace(/\s\s+/g, " ").trim();
+        this.setBookmarkTitle(trimmedTitle);
       },
     },
     ...mapGetters({

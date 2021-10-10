@@ -13,7 +13,8 @@ export default {
         return this.bookmarkDescription;
       },
       set(description) {
-        this.setBookmarkDescription(description);
+        const trimmedDescription = description.replace(/\s\s+/g, " ").trim();
+        this.setBookmarkDescription(trimmedDescription);
       },
     },
     ...mapGetters({

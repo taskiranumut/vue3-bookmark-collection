@@ -21,7 +21,7 @@ export default {
         return this.bookmarkUrl;
       },
       set(url) {
-        this.setBookmarkUrl(url);
+        this.setBookmarkUrl(url.trim());
       },
     },
     ...mapGetters({
