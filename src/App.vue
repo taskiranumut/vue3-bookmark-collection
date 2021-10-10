@@ -1,9 +1,11 @@
 <script>
 import AppHeader from "@/components/shared/AppHeader.vue";
+import AppFooter from "@/components/shared/AppFooter.vue";
 
 export default {
   components: {
     AppHeader,
+    AppFooter,
   },
 };
 </script>
@@ -19,4 +21,5 @@ export default {
       </div>
     </div>
   </div>
+  <AppFooter />
 </template>
