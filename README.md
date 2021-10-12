@@ -11,7 +11,7 @@ Bookmark Collection is a project developed to implement the features of the **Vu
 3. Compiles and hot-reloads for development, ➪ `npm run serve`
 4. Compiles and minifies for production, ➪ `npm run build`
 
-The mockAPI endpoint is public. If you want to create your own endpoint, you can create it for free via [mockAPI](https://mockapi.io/). You can implement the created endpoint to `src/utils/appAxios.js`.
+The mockAPI endpoint is public. If you want to create your own endpoint, you can create it for free via [mockAPI Magic link](https://mockapi.io/clone/614b8a9be4cc2900179eb133). You can implement the created endpoint to `src/utils/appAxios.js`.
 
 HTTP requests can be managed in `src/store/actions.js` if another database of its own is to be used.
 
